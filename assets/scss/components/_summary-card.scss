@@ -1,0 +1,32 @@
+@use '../abstracts/variables';
+
+.summary-card {
+  background-color: white;
+  border-radius: variables.$border-radius;
+  padding: 1.5rem;
+  box-shadow: variables.$shadow;
+  text-align: center;
+
+  &__title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #666;
+  }
+
+  &__amount {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  &--income {
+    border-left: 5px solid variables.$success-color;
+  }
+
+  &--expense {
+    border-left: 5px solid variables.$danger-color;
+  }
+
+  &--balance {
+    border-left: 5px solid variables.$primary-color;
+  }
+}

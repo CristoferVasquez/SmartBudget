@@ -1,0 +1,12 @@
+@use '../abstracts/variables';
+
+.main-footer {
+  background-color: variables.$primary-color;
+  color: white;
+  padding: 1rem;
+
+  &__text {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,11 @@
+@use '../abstracts/variables';
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: variables.$light-bg;
+  color: variables.$text-color;
+}
+
+main {
+  min-height: 100vh;
+}

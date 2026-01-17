@@ -1,0 +1,13 @@
+@use '../abstracts/variables';
+
+
+.movement-card {
+  border-radius: variables.$border-radius;
+  box-shadow: variables.$shadow;
+
+  &__header {
+    background-color: variables.$primary-color;
+    color: white;
+    font-weight: 500;
+  }
+}

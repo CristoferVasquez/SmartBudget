@@ -1,0 +1,32 @@
+@use '../abstracts/variables';
+@use "sass:color";
+
+.action-btn {
+  width: 70%;
+  padding: 0.75rem 1rem;
+  border-radius: variables.$border-radius;
+  border: 1px solid transparent;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &--income {
+    color: variables.$success-color;
+    border-color: color.adjust(variables.$success-color, $lightness: -10%);
+
+    &:hover {
+      background-color: color.adjust(variables.$success-color, $lightness: 45%);
+    }
+  }
+
+  &--expense {
+    color: variables.$danger-color;
+    border-color: color.adjust(variables.$danger-color, $lightness: -10%);
+
+    &:hover {
+      background-color: color.adjust(variables.$danger-color, $lightness: 45%);
+    }
+  }
+}

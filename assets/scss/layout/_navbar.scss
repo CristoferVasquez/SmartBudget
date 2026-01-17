@@ -1,0 +1,45 @@
+@use '../abstracts/variables';
+@use "sass:color";
+
+.main-header {
+  height: 56px;
+}
+
+.main-navbar {
+  background-color: #212529; // Bootstrap dark
+  box-shadow: variables.$shadow;
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: variables.$spacing;
+  }
+
+  &__title {
+    font-weight: 600;
+    color: white;
+  }
+
+  &__link {
+    color: rgba(255, 255, 255, 0.85);
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  &__logout {
+    color: variables.$danger-color;
+
+    &:hover {
+      color: color.adjust(variables.$danger-color, $lightness: 15%);
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .main-navbar {
+    background-color: variables.$primary-color !important;
+  }
+}

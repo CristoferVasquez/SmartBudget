@@ -1,0 +1,201 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+main {
+  min-height: 100vh;
+}
+
+.main-header {
+  height: 56px;
+}
+
+.main-navbar {
+  background-color: #212529;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.main-navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.main-navbar__title {
+  font-weight: 600;
+  color: white;
+}
+.main-navbar__link {
+  color: rgba(255, 255, 255, 0.85);
+}
+.main-navbar__link:hover {
+  color: white;
+}
+.main-navbar__logout {
+  color: #dc3545;
+}
+.main-navbar__logout:hover {
+  color: rgb(231.2974683544, 118.2025316456, 129.0379746835);
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .main-navbar {
+    background-color: #212529 !important;
+  }
+}
+.dashboard__chart {
+  padding-bottom: 1.5rem;
+  margin-bottom: 3rem;
+}
+.dashboard__summary {
+  margin-bottom: 3rem;
+}
+.dashboard__movements {
+  margin-bottom: 3rem;
+}
+
+.main-footer {
+  background-color: #212529;
+  color: white;
+  padding: 1rem;
+}
+.main-footer__text {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.summary-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+.summary-card__title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+.summary-card__amount {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.summary-card--income {
+  border-left: 5px solid #198754;
+}
+.summary-card--expense {
+  border-left: 5px solid #dc3545;
+}
+.summary-card--balance {
+  border-left: 5px solid #212529;
+}
+
+.movement-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.movement-card__header {
+  background-color: #212529;
+  color: white;
+  font-weight: 500;
+}
+
+.movement-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.movement-list__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+}
+.movement-list__item--income {
+  color: #198754;
+}
+.movement-list__item--expense {
+  color: #dc3545;
+}
+
+.action-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #212529;
+  color: white;
+  font-size: 2rem;
+  border: none;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.action-sidebar {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 320px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease;
+  z-index: 1200;
+}
+.action-sidebar--active {
+  right: 0;
+}
+.action-sidebar__header {
+  padding: 1rem;
+  background-color: #212529;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.action-sidebar__close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+.action-sidebar__content {
+  padding-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.action-btn {
+  width: 70%;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.action-btn--income {
+  color: #198754;
+  border-color: rgb(17.03125, 91.96875, 57.225);
+}
+.action-btn--income:hover {
+  background-color: rgb(153.328125, 236.171875, 197.7625);
+}
+.action-btn--expense {
+  color: #dc3545;
+  border-color: rgb(189.2151898734, 32.7848101266, 47.7721518987);
+}
+.action-btn--expense:hover {
+  background-color: rgb(253.8924050633, 248.6075949367, 249.1139240506);
+}
+
+/*# sourceMappingURL=style.css.map */

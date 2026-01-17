@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>SmartBudget | Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+</head>
+<body class="app">
+  <header class="main-header">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top main-navbar">
+      <a class="navbar-brand main-navbar__brand" href="#">
+        <img src="assets/img/logo.png" width="30" height="30" alt="">
+        <span class="main-navbar__title">SmartBudget</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse main-navbar__menu" id="navbarNav">
+        <ul class="navbar-nav">
+          
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="#" class="nav-link main-navbar__logout">Cerrar sesión</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main class="dashboard container-fluid pt-5 mt-4">
+    
+    <section class="dashboard__chart">
+      <div class="card mt-4">
+        <div class="card-body">
+          <canvas id="financeChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="dashboard__summary row">
+      <div class="col-md-4">
+        <div class="summary-card summary-card--income">
+          <h5 class="summary-card__title">Ingresos</h5>
+          <p class="summary-card__amount"></p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="summary-card summary-card--expense">
+          <h5 class="summary-card__title">Gastos</h5>
+          <p class="summary-card__amount"></p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="summary-card summary-card--balance">
+          <h5 class="summary-card__title">Saldo</h5>
+          <p class="summary-card__amount"></p>
+        </div>
+      </div>
+    </section>
+    <section class="dashboard__movements mt-4">
+      <div class="card movement-card">
+        <div class="card-header movement-card__header">
+          Últimos movimientos
+        </div>
+
+        <div class="card-body movement-card__body">
+          <ul class="movement-list" id="movementList"></ul>
+
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section>
+      <button class="action-toggle" id="openActions">
+        +
+      </button>
+      <aside class="action-sidebar" id="actionSidebar">
+        <div class="action-sidebar__header">
+          <h5 class="action-sidebar__title">Ingresar Operacion</h5>
+          <button class="action-sidebar__close" id="closeActions">&times;</button>
+        </div>
+
+        <div class="action-sidebar__content">
+          <button class="action-btn action-btn--income" onclick="openIncome()">
+            Agregar ingreso
+          </button>
+
+          <button class="action-btn action-btn--expense" onclick="openExpense()">
+            Agregar gasto
+          </button>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="main-footer text-center mt-5">
+    <p class="main-footer__text">
+      © 2026 SmartBudget — Controla tus finanzas inteligentemente
+    </p>
+  </footer>
+
+  <div id="modalIngresosContainer"></div>
+  <div id="modalGastosContainer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/scripts.js"></script>
+
+
+</body>
+</html>
