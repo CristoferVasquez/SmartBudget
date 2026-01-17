@@ -40,6 +40,7 @@ $(document).on('submit', '#incomeForm', function (e) {
   this.reset(); 
 
   actualizarResumen();
+  renderChart();
 });
 
 $(document).on('submit', '#expenseForm', function (e) {
@@ -64,6 +65,7 @@ $(document).on('submit', '#expenseForm', function (e) {
   this.reset(); 
 
   actualizarResumen();
+  renderChart();
 });
 
   actualizarResumen();
