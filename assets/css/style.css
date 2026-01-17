@@ -144,7 +144,7 @@ main {
   background-color: white;
   box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
   transition: right 0.3s ease;
-  z-index: 1200;
+  z-index: 1020;
 }
 .action-sidebar--active {
   right: 0;
