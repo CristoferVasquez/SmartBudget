@@ -36,11 +36,14 @@ $(document).on('submit', '#incomeForm', function (e) {
 
   localStorage.setItem('data', JSON.stringify(infoData));
 
+  actualizarResumen();
+  renderMovimientos();
+  renderChart();
+
   $('#incomeModal').modal('hide');
   this.reset(); 
 
-  actualizarResumen();
-  renderChart();
+
 });
 
 $(document).on('submit', '#expenseForm', function (e) {
@@ -61,11 +64,13 @@ $(document).on('submit', '#expenseForm', function (e) {
 
   localStorage.setItem('data', JSON.stringify(infoData));
 
+  actualizarResumen();
+  renderMovimientos();
+  renderChart();
+
   $('#expenseModal').modal('hide');
   this.reset(); 
 
-  actualizarResumen();
-  renderChart();
 });
 
   actualizarResumen();
