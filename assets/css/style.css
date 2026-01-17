@@ -138,16 +138,18 @@ main {
 .action-sidebar {
   position: fixed;
   top: 0;
-  right: -320px;
+  right: 0;
   width: 320px;
   height: 100vh;
   background-color: white;
   box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+  transform: translateX(100%);
   transition: right 0.3s ease;
-  z-index: 1020;
+  z-index: 2000;
 }
 .action-sidebar--active {
   right: 0;
+  transform: translateX(0);
 }
 .action-sidebar__header {
   padding: 1rem;

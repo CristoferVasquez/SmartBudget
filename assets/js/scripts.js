@@ -1,8 +1,28 @@
 let infoData = JSON.parse(localStorage.getItem("data")) || [];
 
-window.addEventListener('resize', renderChart);
+
 
 $(document).ready(function () {
+
+  window.addEventListener('resize', renderChart);
+
+  const sidebar = document.getElementById('actionSidebar');
+  const openBtn = document.getElementById('openActions');
+  const closeBtn = document.getElementById('closeActions');
+
+  sidebar.classList.remove('action-sidebar--active');
+
+  
+  openBtn.addEventListener('click', () => {
+    sidebar.classList.add('action-sidebar--active');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('action-sidebar--active');
+  });
+
+$('#btnIncome').on('click', openIncome);
+$('#btnExpense').on('click', openExpense);
 
 
   fetch('assets/pages/componentes/modal-formIngresos.html')
@@ -78,28 +98,19 @@ $(document).on('submit', '#expenseForm', function (e) {
   renderChart();
 });
 
-
-const sidebar = document.getElementById('actionSidebar');
-const openBtn = document.getElementById('openActions');
-const closeBtn = document.getElementById('closeActions');
-
-openBtn.addEventListener('click', () => {
-  sidebar.classList.add('action-sidebar--active');
-});
-
-closeBtn.addEventListener('click', () => {
-  sidebar.classList.remove('action-sidebar--active');
-});
-
-
 function openIncome() {
+  document.getElementById('actionSidebar')
+    .classList.remove('action-sidebar--active');
+
   $('#incomeModal').modal('show');
 }
 
 function openExpense() {
+  document.getElementById('actionSidebar')
+    .classList.remove('action-sidebar--active');
+
   $('#expenseModal').modal('show');
 }
-
 function actualizarResumen() {
   const totalIngresos = infoData
     .filter(i => i.tipo === 'Ingreso')
@@ -157,6 +168,10 @@ function getChartData() {
 let chartInstance = null;
 
 function renderChart() {
+
+  const canvas = document.getElementById('financeChart');
+  if (!canvas) return;
+
   const ctx = document.getElementById('financeChart').getContext('2d');
   const { ingresos, gastos } = getChartData();
   const isMobile = window.innerWidth < 768;
@@ -166,7 +181,6 @@ function renderChart() {
   }
 
   if (isMobile) {
-    // 📱 GRÁFICO DE TORTA
     chartInstance = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -186,7 +200,6 @@ function renderChart() {
     });
 
   } else {
-    // 🖥️ GRÁFICO DE BARRAS
     chartInstance = new Chart(ctx, {
       type: 'bar',
       data: {
